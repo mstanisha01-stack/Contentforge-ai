@@ -795,6 +795,45 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.cta-stripe-btn {
+    margin-bottom: 0.5rem;
+}
+
+.cta-divider {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8aa87a;
+    margin: 0.5rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cta-divider::before,
+.cta-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: rgba(136, 176, 75, 0.2);
+}
+
+.cta-divider span {
+    flex-shrink: 0;
+    font-family: 'Raleway', -apple-system, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+.cta-form-label {
+    font-size: 0.85rem;
+    color: #4a6b3c;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
 .form-group input {
     width: 100%;
     padding: 0.85rem 1.25rem;
