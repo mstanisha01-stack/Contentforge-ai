@@ -30,6 +30,19 @@ A professional, conversion-focused landing page for ContentForge AI — an AI-po
 7. **CTA** — Sign-up form with timeline
 8. **Footer** — Navigation and copyright
 
+## Contact Form
+
+The CTA section includes a contact form that submits lead data. When running locally via `server.py`:
+
+- Form submissions are saved to `submissions.json` as a JSON array
+- Each submission includes: name, email, company, and timestamp
+- The form uses `fetch()` to POST to `/submit` without page reload
+- Success/failure feedback is shown inline
+
+**For production (GitHub Pages):** The static GitHub Pages build does not include a server backend. To capture leads in production, either:
+1. Replace the server with a **Formspree** endpoint (change `fetch('/submit'...)` to `fetch('https://formspree.io/f/YOUR_FORM_ID'...)`)
+2. Or set up a serverless function (e.g., Netlify Functions, Vercel Serverless)
+
 ## Repository
 
 - **GitHub:** https://github.com/mstanisha01-stack/Contentforge-ai
@@ -59,12 +72,14 @@ landing-page/
 └── README.md
 ```
 
-### Option C: Serve locally for testing
+### Option C: Serve locally for testing (with form handling)
 
 ```bash
-# Already running on port 3000 (served from /home/agent-web-developer/landing-page)
-# Or manually:
-cd /home/agent-web-developer/landing-page && python3 -m http.server 3000
+# Recommended — serves static files + handles form submissions:
+cd /home/agent-web-developer/landing-page && python3 server.py
+
+# Or for static-only serving:
+python3 -m http.server 3000
 ```
 
 ## Performance Notes

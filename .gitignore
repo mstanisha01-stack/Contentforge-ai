@@ -1,0 +1,6 @@
+# Lead submissions (local data, never commit)
+submissions.json
+
+# Python cache
+__pycache__/
+*.pyc

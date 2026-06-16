@@ -91,24 +91,50 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Simulate submission
+            // Real submission via fetch
             const submitBtn = ctaForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            setTimeout(function () {
-                // Hide form fields, show success
-                ctaForm.querySelectorAll('.form-group').forEach(function (el) {
-                    el.style.display = 'none';
-                });
-                submitBtn.style.display = 'none';
+            var formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('company', company);
 
-                const feedback = document.createElement('div');
-                feedback.className = 'form-success';
-                feedback.textContent = 'Thanks, ' + name + '! We\'ll be in touch within 24 hours. ✨';
-                ctaForm.appendChild(feedback);
-            }, 600);
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData.toString()
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.status === 'ok') {
+                    // Hide form fields, show success
+                    ctaForm.querySelectorAll('.form-group').forEach(function (el) {
+                        el.style.display = 'none';
+                    });
+                    submitBtn.style.display = 'none';
+
+                    var feedback = document.createElement('div');
+                    feedback.className = 'form-success';
+                    feedback.textContent = data.message;
+                    ctaForm.appendChild(feedback);
+                } else {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    showFormFeedback(ctaForm, data.message || 'Something went wrong. Please try again.', 'error');
+                }
+            })
+            .catch(function () {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                showFormFeedback(ctaForm, 'Could not connect. Please try again or email us directly.', 'error');
+            });
         });
     }
 
