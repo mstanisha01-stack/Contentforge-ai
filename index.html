@@ -146,12 +146,22 @@
                 <h2 class="section-title">Plans That Fit Your Business</h2>
                 <p class="section-desc">Three subscription tiers designed for growing small businesses. Each includes strategy, writing, and design — no hidden fees, no agency markups.</p>
             </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label toggle-active" data-plan="monthly">Monthly</span>
+                <div class="toggle-switch" id="pricing-toggle-switch">
+                    <div class="toggle-knob toggle-knob-left"></div>
+                </div>
+                <span class="toggle-label" data-plan="annual">Annual <span class="toggle-save">Save 15%</span></span>
+            </div>
             <div class="tier-grid">
                 <div class="tier-card tier-starter">
                     <div class="tier-header">
                         <span class="tier-badge">Starter</span>
                         <h3 class="tier-name">Starter</h3>
-                        <p class="tier-price"><span class="price">$499</span><span class="period">/mo</span></p>
+                        <p class="tier-price">
+                            <span class="price" data-plan="monthly">$499</span><span class="price" data-plan="annual">$5,089</span>
+                            <span class="period" data-plan="monthly">/mo</span><span class="period" data-plan="annual">/yr</span>
+                        </p>
                         <p class="tier-desc">For solopreneurs and very small teams who need a consistent social + blog presence.</p>
                     </div>
                     <ul class="tier-features">
@@ -164,7 +174,10 @@
                         <li><span class="check">✓</span> Monthly content calendar</li>
                         <li><span class="check">✓</span> Monthly strategy call</li>
                     </ul>
-                    <a href="#services" class="btn btn-primary btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/fZufZh17Ef9K44Lewa43S00', '_blank')">Subscribe — $499/mo</a>
+                    <div class="tier-actions">
+                        <a href="#services" class="btn btn-primary btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/fZufZh17Ef9K44Lewa43S00', '_blank')" data-plan="monthly">Subscribe — $499/mo</a>
+                        <a href="#services" class="btn btn-outline btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/6oUeVd6rY5za30Hco243S03', '_blank')" data-plan="annual">Subscribe Annual — $5,089/yr <span class="save-badge">Save $899</span></a>
+                    </div>
                 </div>
 
                 <div class="tier-card tier-growth featured">
@@ -172,7 +185,10 @@
                     <div class="tier-header">
                         <span class="tier-badge">Growth</span>
                         <h3 class="tier-name">Growth</h3>
-                        <p class="tier-price"><span class="price">$1,199</span><span class="period">/mo</span></p>
+                        <p class="tier-price">
+                            <span class="price" data-plan="monthly">$1,199</span><span class="price" data-plan="annual">$12,229</span>
+                            <span class="period" data-plan="monthly">/mo</span><span class="period" data-plan="annual">/yr</span>
+                        </p>
                         <p class="tier-desc">For growing businesses needing multi-channel consistency across blog, social, email, and ads.</p>
                     </div>
                     <ul class="tier-features">
@@ -186,14 +202,20 @@
                         <li><span class="check">✓</span> Monthly content calendar</li>
                         <li><span class="check">✓</span> Bi-weekly strategy calls</li>
                     </ul>
-                    <a href="#services" class="btn btn-primary btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/cNi8wPaIee5G6cT2Ns43S01', '_blank')">Subscribe — $1,199/mo</a>
+                    <div class="tier-actions">
+                        <a href="#services" class="btn btn-primary btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/cNi8wPaIee5G6cT2Ns43S01', '_blank')" data-plan="monthly">Subscribe — $1,199/mo</a>
+                        <a href="#services" class="btn btn-outline btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/bJe00j4jQ7Hi6cT73I43S04', '_blank')" data-plan="annual">Subscribe Annual — $12,229/yr <span class="save-badge">Save $2,159</span></a>
+                    </div>
                 </div>
 
                 <div class="tier-card tier-scale">
                     <div class="tier-header">
                         <span class="tier-badge">Scale</span>
                         <h3 class="tier-name">Scale</h3>
-                        <p class="tier-price"><span class="price">$2,499</span><span class="period">/mo</span></p>
+                        <p class="tier-price">
+                            <span class="price" data-plan="monthly">$2,499</span><span class="price" data-plan="annual">$25,489</span>
+                            <span class="period" data-plan="monthly">/mo</span><span class="period" data-plan="annual">/yr</span>
+                        </p>
                         <p class="tier-desc">For brands with multiple platforms and high content volume who want full-channel coverage.</p>
                     </div>
                     <ul class="tier-features">
@@ -207,10 +229,13 @@
                         <li><span class="check">✓</span> Brand voice guide</li>
                         <li><span class="check">✓</span> Weekly strategy calls</li>
                     </ul>
-                    <a href="#services" class="btn btn-outline btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/00w8P7w25zabxdgEi43S02', '_blank')">Subscribe — $2,499/mo</a>
+                    <div class="tier-actions">
+                        <a href="#services" class="btn btn-primary btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/00w8wP7w25zabxdgEi43S02', '_blank')" data-plan="monthly">Subscribe — $2,499/mo</a>
+                        <a href="#services" class="btn btn-outline btn-full" target="_blank" rel="noopener" onclick="event.stopPropagation(); window.open('https://buy.stripe.com/28E28rg2yd1C30HfAe43S05', '_blank')" data-plan="annual">Subscribe Annual — $25,489/yr <span class="save-badge">Save $4,499</span></a>
+                    </div>
                 </div>
             </div>
-            <p class="tier-note">💡 Annual plans save 15%. Pay-per-piece add-ons available anytime.</p>
+            <p class="tier-note">💡 Pay annually and save 15% — that's hundreds to thousands in savings per year. Pay-per-piece add-ons also available.</p>
         </div>
     </section>
 

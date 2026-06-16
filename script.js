@@ -45,6 +45,58 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // =====================================
+    // Pricing Toggle (Monthly / Annual)
+    // =====================================
+    const toggleSwitch = document.getElementById('pricing-toggle-switch');
+    const toggleKnob = toggleSwitch ? toggleSwitch.querySelector('.toggle-knob') : null;
+    const servicesSection = document.getElementById('services');
+    const toggleLabels = document.querySelectorAll('.toggle-label');
+
+    if (toggleSwitch && toggleKnob && servicesSection) {
+        function setAnnualMode(isAnnual) {
+            if (isAnnual) {
+                servicesSection.classList.add('annual-active');
+                toggleSwitch.classList.add('annual');
+                toggleKnob.classList.remove('toggle-knob-left');
+                toggleKnob.classList.add('toggle-knob-right');
+                toggleLabels.forEach(function (label) {
+                    if (label.dataset.plan === 'annual') {
+                        label.classList.add('toggle-active');
+                    } else {
+                        label.classList.remove('toggle-active');
+                    }
+                });
+            } else {
+                servicesSection.classList.remove('annual-active');
+                toggleSwitch.classList.remove('annual');
+                toggleKnob.classList.remove('toggle-knob-right');
+                toggleKnob.classList.add('toggle-knob-left');
+                toggleLabels.forEach(function (label) {
+                    if (label.dataset.plan === 'monthly') {
+                        label.classList.add('toggle-active');
+                    } else {
+                        label.classList.remove('toggle-active');
+                    }
+                });
+            }
+        }
+
+        // Toggle on switch click
+        toggleSwitch.addEventListener('click', function () {
+            var isCurrentlyAnnual = servicesSection.classList.contains('annual-active');
+            setAnnualMode(!isCurrentlyAnnual);
+        });
+
+        // Toggle on label click
+        toggleLabels.forEach(function (label) {
+            label.addEventListener('click', function () {
+                var plan = this.dataset.plan;
+                setAnnualMode(plan === 'annual');
+            });
+        });
+    }
+
+    // =====================================
     // Smooth scroll for anchor links (fallback)
     // =====================================
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
