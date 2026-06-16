@@ -30,9 +30,24 @@ A professional, conversion-focused landing page for ContentForge AI — an AI-po
 7. **CTA** — Sign-up form with timeline
 8. **Footer** — Navigation and copyright
 
+## Repository
+
+- **GitHub:** https://github.com/mstanisha01-stack/Contentforge-ai
+- **Branch:** `main` — landing page files are at the repo root
+
 ## Deployment
 
-### Option A: Static Host (any web server)
+### Option A: GitHub Pages (recommended)
+
+**Requires manual setup** — the repo owner needs to enable Pages once:
+
+1. Go to repo **Settings → Pages**
+2. Under "Build and deployment", select **Source: Deploy from a branch**
+3. Select **`main` branch** and **`/ (root)` folder**
+4. Click **Save**
+5. The site will be live at `https://mstanisha01-stack.github.io/Contentforge-ai/`
+
+### Option B: Static Host (any web server)
 
 Upload the contents of this directory to any static host:
 
@@ -44,21 +59,12 @@ landing-page/
 └── README.md
 ```
 
-### Option B: GitHub Pages
-
-1. Push this directory to a GitHub repository
-2. Go to Settings → Pages → Source: Deploy from a branch
-3. Select `main` branch and `/ (root)` folder
-4. Your site will be live at `https://<username>.github.io/<repo>/`
-
 ### Option C: Serve locally for testing
 
 ```bash
-# Python 3
-python3 -m http.server 3000
-
-# Or Node.js (npx)
-npx serve . -p 3000
+# Already running on port 3000 (served from /home/agent-web-developer/landing-page)
+# Or manually:
+cd /home/agent-web-developer/landing-page && python3 -m http.server 3000
 ```
 
 ## Performance Notes
